@@ -1,0 +1,64 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="page-head">
+  <div class="wrap">
+    <h1>Our story</h1>
+    <p class="lede">Frustrated by the pizza on offer on the high street, Barrel &amp; Stone set out to help local businesses with a passion for excellence freshly prepare, bake and serve stone-baked pizza of an exceptional standard to their community.</p>
+  </div>
+</section>
+
+<section class="split">
+  <div class="split-photo">
+    <%- include('partials/img', { slot: 'pub-table', alt: 'A Barrel & Stone pizza and a pint at a local pub', label: 'Pizza and a pint on a pub table' }) %>
+  </div>
+  <div class="split-text">
+    <h2>Pizza at your local</h2>
+    <p>Our network of Barrel &amp; Stone pizza premises is run by our pizza ambassadors. They give local communities and families the chance to enjoy an amazing stone-baked pizza at their local, with excellent beer and wine to go with it.</p>
+    <a class="btn btn-outline" href="/find">Find your nearest pub</a>
+  </div>
+</section>
+
+<section class="split split-reverse">
+  <div class="split-photo">
+    <%- include('partials/img', { slot: 'ingredients', alt: 'Italian ingredients laid out on a wooden table', label: 'Ingredients flat lay' }) %>
+  </div>
+  <div class="split-text">
+    <h2>So what makes Barrel &amp; Stone pizza so special?</h2>
+    <p>Like all great food and drink, it comes down to choosing the right ingredients and preparing them with care. Our <a href="/menu">menus</a> use the finest ingredients, paying homage to the original pizza masters of Naples while adding a twist from modern Italian food culture. With a choice of sizes, plus vegan and gluten-free options, there's something for everyone.</p>
+    <p>Our fully trained pizza ambassadors share our ambition for excellent pizza, beer and wine. Visit any of them and you'll find a fantastic artisan pizza, quality wine and specially crafted beer, which may even have been brewed in your area.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Our promise</h2>
+    <p class="lede">Fresh, hearty and made properly, wherever you order it.</p>
+    <div class="included">
+      <div>
+        <h3>Baked fresh on the premises</h3>
+        <p>Wherever you order a Barrel &amp; Stone pizza, it's prepared and baked fresh in that pub's kitchen.</p>
+      </div>
+      <div>
+        <h3>Cooked on hot stone</h3>
+        <p>Our pizza stones reach temperatures a conventional oven can't, for an authentic thin and crispy base topped with the best Italian ingredients, just as the Neapolitan pizza masters intended.</p>
+      </div>
+      <div>
+        <h3>The same standard everywhere</h3>
+        <p>Every ambassador is fully trained and shares our devotion to great food and drink, so whichever pub you choose, your pizza and drink meet our standards, whether you eat in or take it home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap band-inner">
+    <div>
+      <h2>Want to become a pizza ambassador?</h2>
+      <p>If you run a pub, hotel or bar and share our passion for great food, we'd love to hear from you.</p>
+    </div>
+    <a class="btn btn-tomato" href="/for-pubs">See how it works</a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

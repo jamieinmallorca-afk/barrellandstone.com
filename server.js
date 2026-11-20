@@ -116,6 +116,13 @@ app.post('/enquiry', async (req, res) => {
   res.redirect(303, '/for-pubs?sent=1#talk');
 });
 
+app.get('/our-story', (req, res) => {
+  res.render('our-story', {
+    title: 'Our story | Barrel & Stone stone-baked pizza',
+    description: 'Why Barrel & Stone exists: fresh, stone-baked pizza of an exceptional standard, served at local pubs by our trained pizza ambassadors.',
+  });
+});
+
 app.get('/partners', (req, res) => {
   res.render('partners', {
     title: 'Partner login | Barrel & Stone',
@@ -138,8 +145,7 @@ const redirects = {
   '/menu/': '/menu',
   '/contact': '/for-pubs#talk',
   '/contact/': '/for-pubs#talk',
-  '/our-story': '/',
-  '/our-story/': '/',
+  '/our-story/': '/our-story',
   '/my-account': '/partners',
   '/my-account/': '/partners',
 };
@@ -149,7 +155,7 @@ app.get('/robots.txt', (req, res) => {
   res.type('text/plain').send(`User-agent: *\nDisallow: /partners\nSitemap: ${SITE_URL}/sitemap.xml\n`);
 });
 app.get('/sitemap.xml', (req, res) => {
-  const urls = ['/', '/menu', '/find', '/for-pubs'];
+  const urls = ['/', '/menu', '/find', '/our-story', '/for-pubs'];
   res.type('application/xml').send(
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
       urls.map((u) => `  <url><loc>${SITE_URL}${u}</loc></url>`).join('\n') +
