@@ -4,6 +4,8 @@ const express = require('express');
 const compression = require('compression');
 
 const app = express();
+// Changes on every deploy so browsers fetch fresh CSS, JS and images.
+const ASSET_V = process.env.RAILWAY_GIT_COMMIT_SHA ? process.env.RAILWAY_GIT_COMMIT_SHA.slice(0, 8) : Date.now().toString(36);
 const PORT = process.env.PORT || 3000;
 const SITE_URL = (process.env.SITE_URL || 'https://www.barrelandstone.co.uk').replace(/\/$/, '');
 
@@ -28,16 +30,18 @@ const IMG_DIR = path.join(__dirname, 'public', 'img');
 const EXTS = ['webp', 'jpg', 'jpeg', 'png', 'svg'];
 function findImage(slot) {
   for (const ext of EXTS) {
-    if (fs.existsSync(path.join(IMG_DIR, `${slot}.${ext}`))) return `/img/${slot}.${ext}`;
+    if (fs.existsSync(path.join(IMG_DIR, `${slot}.${ext}`))) return `/img/${slot}.${ext}?v=${ASSET_V}`;
   }
   return null;
 }
 
 app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-cache');
   res.locals.site = site;
   res.locals.siteUrl = SITE_URL;
   res.locals.path = req.path;
   res.locals.findImage = findImage;
+  res.locals.v = ASSET_V;
   next();
 });
 

@@ -60,5 +60,5 @@ const venueLd = venues.map(v => ({
 </section>
 
 <%- include('partials/footer', {
-  extraScripts: '<script src="/vendor/leaflet/leaflet.js"></script><script src="/js/find.js" defer></script>'
+  extraScripts: '<script src="/vendor/leaflet/leaflet.js"></script><script src="/js/find.js?v=' + v + '" defer></script>'
 }) %>
