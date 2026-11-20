@@ -1,0 +1,112 @@
+[
+  {
+    "id": "red-lion-marlow",
+    "name": "The Red Lion",
+    "town": "Marlow",
+    "address": "High Street, Marlow, Buckinghamshire",
+    "postcode": "SL7",
+    "lat": 51.5713,
+    "lng": -0.7765,
+    "hours": "Pizza served daily, 12–9pm",
+    "delivery": ["Deliveroo", "Just Eat"]
+  },
+  {
+    "id": "kings-head-henley",
+    "name": "The Kings Head",
+    "town": "Henley-on-Thames",
+    "address": "Market Place, Henley-on-Thames, Oxfordshire",
+    "postcode": "RG9",
+    "lat": 51.5358,
+    "lng": -0.9045,
+    "hours": "Pizza served Wed–Sun, 12–9pm",
+    "delivery": ["Just Eat"]
+  },
+  {
+    "id": "plough-windsor",
+    "name": "The Plough",
+    "town": "Windsor",
+    "address": "Peascod Street, Windsor, Berkshire",
+    "postcode": "SL4",
+    "lat": 51.4817,
+    "lng": -0.6136,
+    "hours": "Pizza served daily, 12–10pm",
+    "delivery": ["Deliveroo"]
+  },
+  {
+    "id": "bell-reading",
+    "name": "The Bell",
+    "town": "Reading",
+    "address": "London Road, Reading, Berkshire",
+    "postcode": "RG1",
+    "lat": 51.4517,
+    "lng": -0.9600,
+    "hours": "Pizza served daily, 5–10pm",
+    "delivery": ["Deliveroo", "Just Eat"]
+  },
+  {
+    "id": "crown-oxford",
+    "name": "The Crown",
+    "town": "Oxford",
+    "address": "Cowley Road, Oxford",
+    "postcode": "OX4",
+    "lat": 51.7466,
+    "lng": -1.2380,
+    "hours": "Pizza served daily, 12–9:30pm",
+    "delivery": ["Deliveroo"]
+  },
+  {
+    "id": "swan-guildford",
+    "name": "The Swan",
+    "town": "Guildford",
+    "address": "Quarry Street, Guildford, Surrey",
+    "postcode": "GU1",
+    "lat": 51.2341,
+    "lng": -0.5734,
+    "hours": "Pizza served Tue–Sun, 12–9pm",
+    "delivery": ["Just Eat"]
+  },
+  {
+    "id": "ship-brighton",
+    "name": "The Ship",
+    "town": "Brighton",
+    "address": "Kemp Town, Brighton, East Sussex",
+    "postcode": "BN2",
+    "lat": 50.8189,
+    "lng": -0.1211,
+    "hours": "Pizza served daily, 12–10pm",
+    "delivery": ["Deliveroo", "Just Eat"]
+  },
+  {
+    "id": "anchor-bristol",
+    "name": "The Anchor",
+    "town": "Bristol",
+    "address": "North Street, Bedminster, Bristol",
+    "postcode": "BS3",
+    "lat": 51.4419,
+    "lng": -2.6091,
+    "hours": "Pizza served daily, 12–9pm",
+    "delivery": ["Deliveroo"]
+  },
+  {
+    "id": "white-hart-st-albans",
+    "name": "The White Hart",
+    "town": "St Albans",
+    "address": "Holywell Hill, St Albans, Hertfordshire",
+    "postcode": "AL1",
+    "lat": 51.7493,
+    "lng": -0.3390,
+    "hours": "Pizza served Thu–Sun, 12–9pm",
+    "delivery": ["Just Eat"]
+  },
+  {
+    "id": "fox-hounds-bath",
+    "name": "The Fox & Hounds",
+    "town": "Bath",
+    "address": "Walcot Street, Bath, Somerset",
+    "postcode": "BA1",
+    "lat": 51.3858,
+    "lng": -2.3590,
+    "hours": "Pizza served daily, 12–9pm",
+    "delivery": ["Deliveroo", "Just Eat"]
+  }
+]

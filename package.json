@@ -1,0 +1,20 @@
+{
+  "name": "barrel-and-stone",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Barrel & Stone concept website: stone-baked pizza at your local pub",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "leaflet": "^1.9.4"
+  }
+}

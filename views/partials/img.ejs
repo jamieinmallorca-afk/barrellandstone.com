@@ -1,0 +1,8 @@
+<% const src = findImage(slot); const cls = typeof klass !== 'undefined' ? klass : ''; const lazy = typeof eager !== 'undefined' && eager ? 'eager' : 'lazy'; %>
+<% if (src) { %>
+  <img class="photo <%= cls %>" src="<%= src %>" alt="<%= alt %>" loading="<%= lazy %>" decoding="async">
+<% } else { %>
+  <div class="photo placeholder <%= cls %>" role="img" aria-label="<%= alt %>">
+    <span>Photo to come<br><strong><%= label || alt %></strong><br><code>public/img/<%= slot %>.jpg</code></span>
+  </div>
+<% } %>

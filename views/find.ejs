@@ -1,0 +1,64 @@
+<%
+const venueLd = venues.map(v => ({
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Barrel & Stone at " + v.name,
+  "servesCuisine": "Pizza",
+  "address": { "@type": "PostalAddress", "streetAddress": v.address, "addressLocality": v.town, "postalCode": v.postcode, "addressCountry": "GB" },
+  "geo": { "@type": "GeoCoordinates", "latitude": v.lat, "longitude": v.lng }
+}));
+%>
+<%- include('partials/head', {
+  extraHead: '<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">' +
+             '<script type="application/ld+json">' + JSON.stringify(venueLd) + '</script>'
+}) %>
+<%- include('partials/header') %>
+
+<section class="page-head">
+  <div class="wrap">
+    <h1>Find a pub</h1>
+    <p class="lede">Every pub below bakes Barrel &amp; Stone pizza on site. Eat in, take away, or order delivery.</p>
+    <form class="finder finder-light" action="/find" method="get" role="search">
+      <label for="q">Search by town, postcode or pub name</label>
+      <div class="finder-row">
+        <input id="q" name="q" type="search" value="<%= q %>" placeholder="e.g. Reading or RG1">
+        <button class="btn btn-tomato" type="submit">Search</button>
+        <button class="btn btn-outline" type="button" id="locate">Use my location</button>
+      </div>
+    </form>
+    <p class="fineprint">Concept preview: these are sample venues.</p>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="wrap find-layout">
+    <div id="map" class="map" aria-label="Map of Barrel & Stone pubs"></div>
+    <div>
+      <p id="result-count" class="muted" aria-live="polite"></p>
+      <ul class="venue-list" id="venues">
+        <% venues.forEach(v => { %>
+          <li class="venue" data-id="<%= v.id %>" data-lat="<%= v.lat %>" data-lng="<%= v.lng %>" data-search="<%= (v.name + ' ' + v.town + ' ' + v.postcode + ' ' + v.address).toLowerCase() %>">
+            <h2 class="venue-name"><%= v.name %>, <%= v.town %></h2>
+            <p class="muted"><%= v.address %>, <%= v.postcode %></p>
+            <p><%= v.hours %></p>
+            <p class="distance muted"></p>
+            <div class="venue-actions">
+              <a class="btn btn-outline btn-sm" href="https://www.google.com/maps/dir/?api=1&destination=<%= v.lat %>,<%= v.lng %>" rel="noopener">Directions</a>
+              <% v.delivery.forEach(d => { %>
+                <a class="btn btn-tomato btn-sm" href="<%= d === 'Deliveroo' ? site.delivery.deliveroo : site.delivery.justEat %>" rel="noopener">Order on <%= d %></a>
+              <% }) %>
+            </div>
+          </li>
+        <% }) %>
+      </ul>
+      <div class="empty" id="empty" hidden>
+        <h2>No pubs match that search yet</h2>
+        <p>Try a nearby town, or use your location to see the closest pubs. Want Barrel &amp; Stone at your local? <a href="/for-pubs">Tell the landlord about us</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer', {
+  extraScripts: '<script src="/vendor/leaflet/leaflet.js"></script><script src="/js/find.js" defer></script>'
+}) %>

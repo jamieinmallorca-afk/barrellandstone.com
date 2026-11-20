@@ -1,0 +1,18 @@
+{
+  "name": "Barrel & Stone",
+  "legalName": "Barrel and Stone Ltd",
+  "companyNumber": "9589661",
+  "email": "info@barrelandstone.co.uk",
+  "phone": "01628 327 800",
+  "phoneHref": "+441628327800",
+  "social": {
+    "instagram": "https://www.instagram.com/barrelandstone",
+    "facebook": "https://www.facebook.com/barrelandstone",
+    "linkedin": "https://www.linkedin.com/company/barrel-stone-ltd/",
+    "x": "https://twitter.com/barrelandstone"
+  },
+  "delivery": {
+    "justEat": "https://www.just-eat.co.uk/takeaway/brands/barrel-stone",
+    "deliveroo": "https://deliveroo.co.uk/"
+  }
+}

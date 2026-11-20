@@ -1,0 +1,85 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="signboard">
+      <div class="signboard-text">
+        <h1 class="sign-title">Stone-baked pizza, at your local.</h1>
+        <p class="lede">Thin, crispy pizza made fresh behind the bar, with Fior di Latte, proper Italian cured meats and a pint of something brewed down the road.</p>
+        <form class="finder" action="/find" method="get" role="search">
+          <label for="q">Find a Barrel &amp; Stone pub</label>
+          <div class="finder-row">
+            <input id="q" name="q" type="search" placeholder="Town or postcode, e.g. Marlow or SL7" autocomplete="postal-code">
+            <button class="btn btn-brass" type="submit">Find a pub</button>
+          </div>
+        </form>
+      </div>
+      <div class="signboard-photo">
+        <%- include('partials/img', { slot: 'hero', alt: 'A Barrel & Stone pizza just out of the stone oven', label: 'Hero: whole pizza fresh from the oven', klass: 'hero-photo', eager: true }) %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Five worth the walk</h2>
+      <a class="text-link" href="/menu">See the full menu</a>
+    </div>
+    <ul class="pizza-rail">
+      <% signature.forEach(p => { %>
+        <li class="pizza-card">
+          <%- include('partials/img', { slot: 'pizza-' + p.id, alt: p.name + ' pizza', label: p.name, klass: 'square' }) %>
+          <h3><%= p.name %></h3>
+          <p><%= p.desc %></p>
+          <p class="tags"><% p.tags.filter(t => t !== 'GF').forEach(t => { %><abbr class="tag tag-<%= t %>" title="<%= tagLabels[t] %>"><%= t %></abbr><% }) %></p>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</section>
+
+<section class="split">
+  <div class="split-photo">
+    <%- include('partials/img', { slot: 'pub-table', alt: 'A pizza and a pint on a pub table', label: 'Pizza and a pint on a pub table' }) %>
+  </div>
+  <div class="split-text">
+    <h2>Made behind the bar, not in a factory</h2>
+    <p>Every base is hand-stretched from re-milled durum semolina and baked on stone until it's thin and properly crisp. On top: creamy Fior di Latte, 18-month Parma ham, Calabrian 'nduja and our own oregano-infused tomato sauce.</p>
+    <p>Vegetarian, vegan and gluten-free bases are on every menu, and every pub has our full allergen guide.</p>
+    <a class="btn btn-outline" href="/menu#allergens">Allergen guide</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Your nearest Barrel &amp; Stone</h2>
+      <a class="text-link" href="/find">See every pub</a>
+    </div>
+    <ul class="venue-list venue-list-compact">
+      <% venues.forEach(v => { %>
+        <li class="venue">
+          <h3><%= v.name %>, <%= v.town %></h3>
+          <p class="muted"><%= v.address %></p>
+          <p><%= v.hours %></p>
+          <a class="text-link" href="/find?q=<%= encodeURIComponent(v.town) %>">Directions and delivery</a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap band-inner">
+    <div>
+      <h2>Run a pub? Add a pizza menu your whole team can make.</h2>
+      <p>We supply the oven, ingredients, training, menus and delivery set-up. You get longer food hours without hiring a chef.</p>
+    </div>
+    <a class="btn btn-brass" href="/for-pubs">See how it works</a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

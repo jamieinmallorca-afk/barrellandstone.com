@@ -1,0 +1,23 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="section">
+  <div class="wrap narrow">
+    <h1>Partner login</h1>
+    <p class="lede">Order stock, download menus and marketing, and get support for your Barrel &amp; Stone kitchen.</p>
+    <% if (notice) { %>
+      <div class="notice" role="status">
+        <h2 class="h3">The new partner area is on its way</h2>
+        <p>For now, place orders and get support by calling <a href="tel:<%= site.phoneHref %>"><%= site.phone %></a> or emailing <a href="mailto:<%= site.email %>"><%= site.email %></a>.</p>
+      </div>
+    <% } %>
+    <form class="enquiry" action="/partners" method="post">
+      <label>Email <input name="email" type="email" required autocomplete="username"></label>
+      <label>Password <input name="password" type="password" required autocomplete="current-password"></label>
+      <button class="btn btn-tomato" type="submit">Sign in</button>
+    </form>
+    <p class="muted">Not a partner yet? <a href="/for-pubs">See how Barrel &amp; Stone works for pubs</a>.</p>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

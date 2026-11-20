@@ -1,0 +1,93 @@
+<%
+const fmt = n => '£' + (Number.isInteger(n) ? n : n.toFixed(2));
+const menuLd = {
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "name": "Barrel & Stone pizza menu",
+  "hasMenuSection": [
+    { "@type": "MenuSection", "name": "Pizzas", "hasMenuItem": menu.pizzas.map(p => ({ "@type": "MenuItem", "name": p.name, "description": p.desc, "suitableForDiet": p.tags.includes('VG') ? "https://schema.org/VeganDiet" : (p.tags.includes('V') ? "https://schema.org/VegetarianDiet" : undefined) })) },
+    { "@type": "MenuSection", "name": "Sides", "hasMenuItem": menu.sides.map(p => ({ "@type": "MenuItem", "name": p.name, "description": p.desc })) }
+  ]
+};
+%>
+<%- include('partials/head', { extraHead: '<script type="application/ld+json">' + JSON.stringify(menuLd) + '</script>' }) %>
+<%- include('partials/header') %>
+
+<section class="page-head">
+  <div class="wrap">
+    <h1>Our pizzas</h1>
+    <p class="lede">Every pizza comes in 8-inch or 12-inch, and any of them can go on a gluten-free base. Prices are set by each pub, so the figures below are a guide.</p>
+    <p class="key" aria-label="Dietary key">
+      <span><abbr class="tag tag-V">V</abbr> Vegetarian</span>
+      <span><abbr class="tag tag-VG">VG</abbr> Vegan</span>
+      <span><abbr class="tag tag-N">N</abbr> Contains nuts</span>
+    </p>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="wrap menu-layout">
+    <div>
+      <h2 class="menu-h">Pizzas</h2>
+      <ul class="menu-list">
+        <% menu.pizzas.forEach(p => { %>
+          <li class="menu-item" id="<%= p.id %>">
+            <div class="menu-item-head">
+              <h3><%= p.name %> <% p.tags.filter(t => t !== 'GF').forEach(t => { %><abbr class="tag tag-<%= t %>" title="<%= tagLabels[t] %>"><%= t %></abbr><% }) %></h3>
+              <span class="price">from <%= fmt(p.from) %></span>
+            </div>
+            <p><%= p.desc %></p>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+    <aside>
+      <h2 class="menu-h">On the side</h2>
+      <ul class="menu-list">
+        <% menu.sides.forEach(p => { %>
+          <li class="menu-item">
+            <div class="menu-item-head">
+              <h3><%= p.name %> <% p.tags.forEach(t => { %><abbr class="tag tag-<%= t %>" title="<%= tagLabels[t] %>"><%= t %></abbr><% }) %></h3>
+              <span class="price">from <%= fmt(p.from) %></span>
+            </div>
+            <p><%= p.desc %></p>
+          </li>
+        <% }) %>
+      </ul>
+      <h2 class="menu-h">At the bar</h2>
+      <ul class="menu-list">
+        <% menu.drinks.forEach(d => { %>
+          <li class="menu-item"><h3><%= d.name %></h3><p><%= d.desc %></p></li>
+        <% }) %>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-alt" id="allergens">
+  <div class="wrap">
+    <h2>Allergen guide</h2>
+    <p class="measure">Our standard bases contain gluten and soya. The gluten-free base is made without gluten-containing ingredients but is baked in the same oven, so we can't rule out traces. If you have an allergy, tell the bar team before you order and they'll talk you through it.</p>
+    <div class="table-scroll">
+      <table class="allergens">
+        <caption class="visually-hidden">Allergens in each menu item</caption>
+        <thead>
+          <tr><th scope="col">Item</th><% menu.allergenColumns.forEach(a => { %><th scope="col"><%= a %></th><% }) %></tr>
+        </thead>
+        <tbody>
+          <% [...menu.pizzas, ...menu.sides].forEach(p => { %>
+            <tr>
+              <th scope="row"><%= p.name %></th>
+              <% menu.allergenColumns.forEach(a => { const has = p.allergens.includes(a); %>
+                <td class="<%= has ? 'has' : '' %>"><%= has ? 'Contains' : '' %><span class="visually-hidden"><%= has ? '' : 'None' %></span></td>
+              <% }) %>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+    <p class="fineprint">Allergen information in this concept is indicative and will be confirmed against Barrel &amp; Stone's kitchen specifications before launch.</p>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,138 @@
+<%
+const faqs = [
+  ["Do I need a chef?", "No. The menu is designed so anyone on your team can make and bake a pizza after a short training session. Bases arrive ready to stretch and toppings are portioned."],
+  ["What equipment is involved?", "A stone-deck pizza oven sized for your kitchen or back bar, plus prep and serving kit. We'll survey your site and recommend the right set-up."],
+  ["How do I order stock?", "Through the partner area. You order bases, sauce, cheese and toppings as you need them, delivered to your door."],
+  ["Can we sell on Deliveroo and Just Eat?", "Yes. We set up your Barrel & Stone listings, menus and photography on the delivery platforms so you're selling from day one."],
+  ["Do we keep our own food menu?", "Of course. Many partners run Barrel & Stone alongside their existing menu, often to cover the hours the kitchen used to be closed."],
+  ["How long does it take to get started?", "Usually a few weeks from your first call to your first pizza, depending on the oven installation."]
+];
+const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(([q, a]) => ({ "@type": "Question", "name": q, "acceptedAnswer": { "@type": "Answer", "text": a } })) };
+%>
+<%- include('partials/head', { extraHead: '<script type="application/ld+json">' + JSON.stringify(faqLd) + '</script>' }) %>
+<%- include('partials/header') %>
+
+<section class="hero hero-pubs">
+  <div class="wrap">
+    <div class="signboard">
+      <div class="signboard-text">
+        <h1 class="sign-title">A pizza menu your whole team can make.</h1>
+        <p class="lede">Barrel &amp; Stone was started by a pub owner tired of chasing chefs and losing food hours. We give you everything you need to serve proper stone-baked pizza from open to close.</p>
+        <div class="cta-row">
+          <a class="btn btn-brass" href="#talk">Book a call</a>
+          <a class="btn btn-ghost" href="tel:<%= site.phoneHref %>">Call <%= site.phone %></a>
+        </div>
+      </div>
+      <div class="signboard-photo">
+        <%- include('partials/img', { slot: 'process', alt: 'Hands stretching pizza dough before it goes into the stone oven', label: 'Process: stretching dough or loading the oven', klass: 'hero-photo', eager: true }) %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>What you get</h2>
+    <div class="included">
+      <div><h3>The oven and kit</h3><p>A stone-deck oven sized for your space, plus everything for prep and serving.</p></div>
+      <div><h3>The ingredients</h3><p>Semolina bases, our tomato sauce, Fior di Latte and Italian cured meats, ordered as you need them.</p></div>
+      <div><h3>Training</h3><p>On-site training for your team, so anyone on shift can make the menu to the same standard.</p></div>
+      <div><h3>Menus and branding</h3><p>Printed menus, table talkers, signage and allergen guides, all ready to go.</p></div>
+      <div><h3>Delivery set-up</h3><p>Your listings on Deliveroo and Just Eat, with menus and photography done for you.</p></div>
+      <div><h3>A listing on this site</h3><p>Your pub on our store finder, so people searching for Barrel &amp; Stone find you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="split split-reverse">
+  <div class="split-photo">
+    <%- include('partials/img', { slot: 'ingredients', alt: 'Fior di Latte, Parma ham, tomatoes and rocket laid out on a board', label: 'Ingredients flat lay' }) %>
+  </div>
+  <div class="split-text">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><h3>We talk</h3><p>A call about your pub, your kitchen and your trade. We'll be straight about whether it's a fit.</p></li>
+      <li><h3>We set you up</h3><p>Oven installed, stock delivered, team trained, menus printed and delivery listings live.</p></li>
+      <li><h3>You start selling</h3><p>Pizza from open to close, and a partner area for orders and support whenever you need it.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap calc-layout">
+    <div>
+      <h2>What could pizza add?</h2>
+      <p class="measure">Put in your own numbers to see the extra gross profit a pizza menu could bring in. This is a rough guide using your figures, not a forecast.</p>
+    </div>
+    <form class="calc" id="calc" onsubmit="return false">
+      <label>Pizzas sold per week <input type="number" id="c-qty" min="0" step="5" value="80" inputmode="numeric"></label>
+      <label>Average price (£) <input type="number" id="c-price" min="0" step="0.5" value="12" inputmode="decimal"></label>
+      <label>Gross margin (%) <input type="number" id="c-margin" min="0" max="100" step="1" value="65" inputmode="numeric"></label>
+      <div class="calc-out" aria-live="polite">
+        <p><span class="muted">Per week</span> <strong id="c-week">£624</strong></p>
+        <p><span class="muted">Per year</span> <strong id="c-year">£32,448</strong></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>From our partners</h2>
+    <div class="quotes">
+      <figure class="quote">
+        <blockquote>We used to stop serving food at eight. Now the bar team bakes pizza until last orders and the late trade pays for itself.</blockquote>
+        <figcaption>Example quote, licensee <span class="muted">(to be replaced with a real partner)</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>Our delivery orders were zero. Barrel &amp; Stone set up the listings and it's now a proper part of the week.</blockquote>
+        <figcaption>Example quote, pub manager <span class="muted">(to be replaced with a real partner)</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="wrap faq-wrap">
+    <h2>Questions pub owners ask</h2>
+    <div class="faq">
+      <% faqs.forEach(([q, a]) => { %>
+        <details><summary><%= q %></summary><p><%= a %></p></details>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="talk">
+  <div class="wrap talk-layout">
+    <div>
+      <h2>Talk to us about your pub</h2>
+      <p class="measure">Tell us a little about your pub and we'll call you back, usually within one working day. Prefer to talk now? Call <a href="tel:<%= site.phoneHref %>"><%= site.phone %></a> or email <a href="mailto:<%= site.email %>"><%= site.email %></a>.</p>
+      <%- include('partials/img', { slot: 'pub', alt: 'A traditional British pub', label: 'Pub interior or exterior' }) %>
+    </div>
+    <div>
+      <% if (sent) { %>
+        <div class="notice notice-ok" role="status">
+          <h3>Enquiry sent</h3>
+          <p>Thanks. We'll be in touch within one working day.</p>
+        </div>
+      <% } else { %>
+        <% if (error) { %>
+          <div class="notice notice-error" role="alert"><p>Add your name, your pub's name and a valid email address so we can reply.</p></div>
+        <% } %>
+        <form class="enquiry" action="/enquiry" method="post">
+          <label>Your name <input name="name" required autocomplete="name"></label>
+          <label>Pub name <input name="pub" required autocomplete="organization"></label>
+          <label>Town <input name="town" autocomplete="address-level2"></label>
+          <label>Email <input name="email" type="email" required autocomplete="email"></label>
+          <label><span>Phone <span class="muted">(optional)</span></span> <input name="phone" type="tel" autocomplete="tel"></label>
+          <label><span>Anything we should know? <span class="muted">(optional)</span></span> <textarea name="message" rows="4" placeholder="Kitchen set-up, current food offer, opening hours..."></textarea></label>
+          <label class="hp" aria-hidden="true">Website <input name="website" tabindex="-1" autocomplete="off"></label>
+          <button class="btn btn-tomato" type="submit">Send enquiry</button>
+        </form>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

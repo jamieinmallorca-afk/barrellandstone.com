@@ -1,0 +1,46 @@
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="wordmark wordmark-footer">Barrel <span class="amp">&amp;</span> Stone</p>
+      <p class="muted">Thin, crispy stone-baked pizza, made fresh behind the bar at pubs across the UK.</p>
+    </div>
+    <div>
+      <h2 class="footer-h">Eat</h2>
+      <ul>
+        <li><a href="/menu">Our pizzas</a></li>
+        <li><a href="/menu#allergens">Allergens</a></li>
+        <li><a href="/find">Find a pub</a></li>
+        <li><a href="<%= site.delivery.justEat %>" rel="noopener">Order on Just Eat</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-h">Partner with us</h2>
+      <ul>
+        <li><a href="/for-pubs">Pizza for your pub</a></li>
+        <li><a href="/for-pubs#faq">Questions</a></li>
+        <li><a href="/partners">Partner login</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="footer-h">Get in touch</h2>
+      <ul>
+        <li><a href="tel:<%= site.phoneHref %>"><%= site.phone %></a></li>
+        <li><a href="mailto:<%= site.email %>"><%= site.email %></a></li>
+        <li class="social">
+          <a href="<%= site.social.instagram %>" rel="noopener">Instagram</a>,
+          <a href="<%= site.social.facebook %>" rel="noopener">Facebook</a>,
+          <a href="<%= site.social.linkedin %>" rel="noopener">LinkedIn</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <p>&copy; <%= new Date().getFullYear() %> <%= site.legalName %>. Registered in England and Wales, company no. <%= site.companyNumber %>.</p>
+    <p><a href="https://www.barrelandstone.co.uk/privacy-policy">Privacy</a> <a href="https://www.barrelandstone.co.uk/terms-conditions">Terms</a></p>
+  </div>
+</footer>
+<script src="/js/site.js" defer></script>
+<% if (typeof extraScripts !== 'undefined') { %><%- extraScripts %><% } %>
+</body>
+</html>

@@ -1,0 +1,107 @@
+{
+  "_note": "Concept data. Prices are a guide only (each pub sets its own). Allergen data is indicative and MUST be confirmed by Barrel & Stone before going live.",
+  "sizes": ["8-inch", "12-inch"],
+  "allergenColumns": ["Gluten", "Milk", "Soya", "Nuts", "Sulphites"],
+  "pizzas": [
+    {
+      "id": "rustic-classic",
+      "name": "Rustic Classic",
+      "desc": "Oregano-infused Barrel & Stone tomato sauce and creamy Fior di Latte mozzarella. The one everything else is built on.",
+      "tags": ["V", "GF"],
+      "allergens": ["Gluten", "Milk", "Soya"],
+      "from": 9,
+      "signature": true
+    },
+    {
+      "id": "simply-salami",
+      "name": "Simply Salami",
+      "desc": "Cured Napoli salami, Barrel & Stone tomato sauce and Fior di Latte.",
+      "tags": ["GF"],
+      "allergens": ["Gluten", "Milk", "Soya", "Sulphites"],
+      "from": 11
+    },
+    {
+      "id": "the-works",
+      "name": "The Works",
+      "desc": "Smoked speck ham, Napoli salami and fennel salami over tomato sauce and Fior di Latte.",
+      "tags": ["GF"],
+      "allergens": ["Gluten", "Milk", "Soya", "Sulphites"],
+      "from": 11.5
+    },
+    {
+      "id": "nice-and-spicy",
+      "name": "Nice & Spicy",
+      "desc": "Calabrian 'nduja laced with chilli, Fior di Latte, sweet piquanté peppers, hot salami and sliced chillies.",
+      "tags": ["GF"],
+      "allergens": ["Gluten", "Milk", "Soya", "Sulphites"],
+      "from": 11,
+      "signature": true
+    },
+    {
+      "id": "gone-trufflin",
+      "name": "Gone Trufflin'",
+      "desc": "Mushroom and black truffle paste, smoked speck ham, mushrooms and Fior di Latte. No tomato, all depth.",
+      "tags": ["GF"],
+      "allergens": ["Gluten", "Milk", "Soya", "Sulphites"],
+      "from": 12,
+      "signature": true
+    },
+    {
+      "id": "rock-the-parma",
+      "name": "Rock the Parma",
+      "desc": "18-month Parma ham, rocket and Parmigiano Reggiano over tomato and Fior di Latte, finished with balsamic glaze.",
+      "tags": ["GF"],
+      "allergens": ["Gluten", "Milk", "Soya", "Sulphites"],
+      "from": 12.5,
+      "signature": true
+    },
+    {
+      "id": "chicken-and-pesto",
+      "name": "Chicken & Pesto",
+      "desc": "Green pesto and garlic base, seared chicken, Fior di Latte, roasted courgettes, capers and pine nuts.",
+      "tags": ["N", "GF"],
+      "allergens": ["Gluten", "Milk", "Soya", "Nuts"],
+      "from": 12
+    },
+    {
+      "id": "garden-club",
+      "name": "The Garden Club",
+      "desc": "Tomato and garlic, Fior di Latte, red onion, roasted courgettes, piquanté peppers and a handful of rocket.",
+      "tags": ["V", "GF"],
+      "allergens": ["Gluten", "Milk", "Soya"],
+      "from": 10.5,
+      "signature": true
+    },
+    {
+      "id": "the-vegan",
+      "name": "The Vegan",
+      "desc": "Barrel & Stone tomato sauce with Violife vegan mozzarella. Add any veg you like.",
+      "tags": ["VG", "GF"],
+      "allergens": ["Gluten", "Soya"],
+      "from": 9
+    }
+  ],
+  "sides": [
+    {
+      "id": "garlic-bread",
+      "name": "Garlic bread",
+      "desc": "Stone-baked base brushed with garlic-infused olive oil.",
+      "tags": ["V"],
+      "allergens": ["Gluten", "Soya"],
+      "from": 5
+    },
+    {
+      "id": "garlic-mozzarella",
+      "name": "Garlic & mozzarella",
+      "desc": "Our garlic bread under melted Fior di Latte and a drizzle of balsamic glaze.",
+      "tags": ["V"],
+      "allergens": ["Gluten", "Milk", "Soya", "Sulphites"],
+      "from": 6.5
+    }
+  ],
+  "drinks": [
+    { "name": "Local cask and craft beer", "desc": "Every Barrel & Stone pub pours at least one beer brewed nearby. Ask at the bar what's on." },
+    { "name": "Italian red, white and rosé", "desc": "Chosen to sit alongside the pizza, by the glass or bottle." },
+    { "name": "Soft drinks", "desc": "The full range from the bar." }
+  ]
+}
