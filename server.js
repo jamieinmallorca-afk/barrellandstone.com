@@ -18,6 +18,8 @@ app.disable('x-powered-by');
 app.use(compression());
 app.use(express.urlencoded({ extended: false, limit: '20kb' }));
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: '7d' }));
+app.use('/fonts/anton', express.static(path.join(__dirname, 'node_modules', '@fontsource', 'anton', 'files'), { maxAge: '365d' }));
+app.use('/fonts/archivo', express.static(path.join(__dirname, 'node_modules', '@fontsource-variable', 'archivo', 'files'), { maxAge: '365d' }));
 app.use('/vendor/leaflet', express.static(path.join(__dirname, 'node_modules', 'leaflet', 'dist'), { maxAge: '30d' }));
 
 // Image slots: drop a file named <slot>.jpg|jpeg|png|webp into public/img

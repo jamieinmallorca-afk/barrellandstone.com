@@ -2,24 +2,20 @@
 <%- include('partials/header') %>
 
 <section class="hero">
-  <div class="wrap">
-    <div class="signboard">
-      <div class="signboard-text">
-        <h1 class="sign-title">Stone-baked pizza, at your local.</h1>
+      <div class="hero-text">
+        <h1 class="hero-title">Stone&#8209;baked pizza at your local</h1>
         <p class="lede">Thin, crispy pizza made fresh behind the bar, with Fior di Latte, proper Italian cured meats and a pint of something brewed down the road.</p>
         <form class="finder" action="/find" method="get" role="search">
           <label for="q">Find a Barrel &amp; Stone pub</label>
           <div class="finder-row">
             <input id="q" name="q" type="search" placeholder="Town or postcode, e.g. Marlow or SL7" autocomplete="postal-code">
-            <button class="btn btn-brass" type="submit">Find a pub</button>
+            <button class="btn btn-tomato" type="submit">Find a pub</button>
           </div>
         </form>
       </div>
-      <div class="signboard-photo">
+      <div class="hero-media">
         <%- include('partials/img', { slot: 'hero', alt: 'A Barrel & Stone pizza just out of the stone oven', label: 'Hero: whole pizza fresh from the oven', klass: 'hero-photo', eager: true }) %>
       </div>
-    </div>
-  </div>
 </section>
 
 <section class="section">
@@ -78,7 +74,7 @@
       <h2>Run a pub? Add a pizza menu your whole team can make.</h2>
       <p>We supply the oven, ingredients, training, menus and delivery set-up. You get longer food hours without hiring a chef.</p>
     </div>
-    <a class="btn btn-brass" href="/for-pubs">See how it works</a>
+    <a class="btn btn-tomato" href="/for-pubs">See how it works</a>
   </div>
 </section>
 

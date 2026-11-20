@@ -13,21 +13,17 @@ const faqLd = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntit
 <%- include('partials/header') %>
 
 <section class="hero hero-pubs">
-  <div class="wrap">
-    <div class="signboard">
-      <div class="signboard-text">
-        <h1 class="sign-title">A pizza menu your whole team can make.</h1>
+      <div class="hero-text">
+        <h1 class="hero-title">A pizza menu your whole team can make.</h1>
         <p class="lede">Barrel &amp; Stone was started by a pub owner tired of chasing chefs and losing food hours. We give you everything you need to serve proper stone-baked pizza from open to close.</p>
         <div class="cta-row">
-          <a class="btn btn-brass" href="#talk">Book a call</a>
-          <a class="btn btn-ghost" href="tel:<%= site.phoneHref %>">Call <%= site.phone %></a>
+          <a class="btn btn-tomato" href="#talk">Book a call</a>
+          <a class="btn btn-outline" href="tel:<%= site.phoneHref %>">Call <%= site.phone %></a>
         </div>
       </div>
-      <div class="signboard-photo">
+      <div class="hero-media">
         <%- include('partials/img', { slot: 'process', alt: 'Hands stretching pizza dough before it goes into the stone oven', label: 'Process: stretching dough or loading the oven', klass: 'hero-photo', eager: true }) %>
       </div>
-    </div>
-  </div>
 </section>
 
 <section class="section">
