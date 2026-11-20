@@ -84,7 +84,9 @@ p { margin: 0 0 1em; }
 
 /* Header */
 .site-header { background: var(--green-deep); color: var(--white); position: sticky; top: 0; z-index: 50; }
-.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 68px; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 76px; }
+.logo { width: 58px; height: 58px; }
+.logo-footer { width: 104px; height: 104px; margin-bottom: 1rem; }
 .brand { color: var(--white); text-decoration: none; }
 .brand:hover { color: var(--brass-light); }
 .wordmark { font-family: var(--display); font-size: 1.6rem; line-height: 1; letter-spacing: .01em; }

@@ -2,7 +2,7 @@
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <p class="wordmark wordmark-footer">Barrel <span class="amp">&amp;</span> Stone</p>
+      <% const flogo = findImage('logo'); if (flogo) { %><img class="logo-footer" src="<%= flogo %>" alt="Barrel & Stone" width="104" height="104" loading="lazy"><% } else { %><p class="wordmark wordmark-footer">Barrel <span class="amp">&amp;</span> Stone</p><% } %>
       <p class="muted">Thin, crispy stone-baked pizza, made fresh behind the bar at pubs across the UK.</p>
     </div>
     <div>
